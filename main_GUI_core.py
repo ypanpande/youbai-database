@@ -20,16 +20,7 @@ class Main_GUI_core(Frame):
         self.e2 = Entry(f1)
         b1 = Button(f1, text = 'ok', command = self.on_ok_date)
 
-        #statistic
-        fs = LabelFrame(f_top, text = 'statistics')
-        bs1 = Button(fs, text = 'show bar',width = 15, command = self.on_bar)
-        bs2 = Button(fs, text = 'show piechart',width = 15, command = self.on_piechart)
-        # add new data to database
-        fa = LabelFrame(f_top, text = 'add new data to db')
-        Button(fa, text = 'add item', command = self.on_add_item).pack()
 
-        bs1.pack(side = 'left', padx = (5, 5))
-        bs2.pack()
 
         f1.pack(side = 'left', padx = (5, 20))
         fs.pack(side = 'left', padx = (5, 20))
