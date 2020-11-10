@@ -22,16 +22,6 @@ class Main_GUI_core(Frame):
 
 
 
-        f1.pack(side = 'left', padx = (5, 20))
-        fs.pack(side = 'left', padx = (5, 20))
-        fa.pack(side = 'left')
-
-
-        l1.pack(side = 'left')
-        self.e1.pack(side = 'left')
-        l2.pack(side = 'left')
-        self.e2.pack(side = 'left')
-        b1.pack(side = 'left', padx = (10,5))
 
 
         #text inf
