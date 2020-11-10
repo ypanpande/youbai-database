@@ -21,9 +21,6 @@ class Main_GUI_core(Frame):
         b1 = Button(f1, text = 'ok', command = self.on_ok_date)
 
 
-
-
-
         #text inf
         f2 = Frame(self)
         self.inf = ScrolledText(f2, height = 10, width = 120)
