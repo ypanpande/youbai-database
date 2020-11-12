@@ -18,20 +18,7 @@ class Main_GUI_core(Frame):
         l2 = Label(f1, text = 'end:')
         self.e1 = Entry(f1)
         self.e2 = Entry(f1)
-        b1 = Button(f1, text = 'ok', command = self.on_ok_date)
 
-
-        #text inf
-        f2 = Frame(self)
-        self.inf = ScrolledText(f2, height = 10, width = 120)
-        self.inf.pack(expand = True, fill = 'both')
-        self.update_inf(data) # write informaion to text panel
-
-        #table
-        f3 = Frame(self)
-
-        self.tb = Table(f3, dataframe = data['df'], height = 600)
-        self.tb.show()
 
         f_top.pack(expand = True, fill = 'both')
         f2.pack(expand = True, fill = 'both')
