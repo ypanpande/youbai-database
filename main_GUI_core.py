@@ -42,14 +42,7 @@ class Main_GUI_core(Frame):
 
     def update_inf(self, data):
 
-        #1. text inf
-        tprice = round(data["tprice"], 2)
-        num = round(data["tpackage_num"])
-        tb_price = round(data['tb_price'], 2)
-        tc_price = round(data['tc_price'], 2)
-        profit = round(data['profit'], 2)
 
-        text = []
         text.append(f'delivery price: {tprice}')
         text.append(f'package num: {num}')
         text.append(f'tb_price: {tb_price}')
