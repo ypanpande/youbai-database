@@ -40,18 +40,6 @@ class Main_GUI_core(Frame):
         self.tb.redraw()
 
 
-    def update_inf(self, data):
-
-
-        text.append(f'delivery price: {tprice}')
-        text.append(f'package num: {num}')
-        text.append(f'tb_price: {tb_price}')
-        text.append(f'tc_price: {tc_price}')
-        text.append(f'profit: {profit}')
-
-        self.inf.delete('1.0', 'end')
-        self.inf.insert('end', ''.join([t+'\n' for t in text]))
-
 
     def on_bar(self):
         pass
