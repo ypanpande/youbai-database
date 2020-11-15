@@ -29,16 +29,6 @@ class Main_GUI_core(Frame):
 
 
 
-    def on_ok_date(self):
-        #1. inf
-        start = self.e1.get()
-        end = self.e2.get()
-        data = ProfitTable().get_all_data(start = start, end = end)
-        self.update_inf(data)
-        #2. table
-        self.tb.model.df = data['df']
-        self.tb.redraw()
-
 
 
     def on_bar(self):
