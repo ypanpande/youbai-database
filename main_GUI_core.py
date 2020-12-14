@@ -36,9 +36,6 @@ class Main_GUI_core(Frame):
 
 
 
-    def on_piechart(self):
-        pass
-
     def on_add_item(self):
         pass
 
