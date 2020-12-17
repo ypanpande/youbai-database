@@ -20,25 +20,6 @@ class Main_GUI_core(Frame):
         self.e2 = Entry(f1)
 
 
-        f_top.pack(expand = True, fill = 'both')
-        f2.pack(expand = True, fill = 'both')
-        f3.pack(expand = True, fill = 'both')
-
-        self.e1.insert('end', '2021-08-01')
-        self.e2.insert('end', date.today())
-
-
-
-
-
-    def on_bar(self):
-        pass
-
-
-
-    def on_add_item(self):
-        pass
-
 def main():
     root = Tk()
     app = Main_GUI_core(root)
