@@ -20,10 +20,6 @@ class Additem(Frame):
         Grid.rowconfigure(self, 0, weight=1)
         Grid.columnconfigure(self, 0, weight=1)
 
-        # file = open('data.txt', encoding = 'utf-8')
-        # for f in file:
-        #     self.t1.insert('end', f)
-
 
 
     def parse_copy(self, file):
