@@ -31,14 +31,6 @@ class Additem(Frame):
         goods = {}
 
 
-        for f in file.split('\n'):
-            # self.t2.insert('end', f)
-            rownum +=1
-            if '下单时间' in f:
-                b = f.split('/')
-                m = b[0][-2:].replace(':','')
-                d = b[1]
-                y = b[-1][:4]
 
 
                 time = date(year = int(y), month = int(m), day = int(d))
