@@ -33,17 +33,6 @@ class Additem(Frame):
 
 
 
-                time = date(year = int(y), month = int(m), day = int(d))
-                continue
-            if '包裹单数量'  in f:
-                b = f.split()
-                package_num = int(''.join([s for s in b[1]]))
-                money = b[-1].replace('支出金额','').replace('欧', '')[1:]
-                continue
-            if '物品' in f and '品牌' in f and '尺寸' in f:
-                start_goods = True
-                continue
-            if start_goods and f.split()[-1].isdigit():
 
                 k = ''.join(f.split()[:-2])
                 v = f.split()[-1]
