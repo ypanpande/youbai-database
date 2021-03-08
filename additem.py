@@ -20,6 +20,10 @@ class Additem(Frame):
         Grid.rowconfigure(self, 0, weight=1)
         Grid.columnconfigure(self, 0, weight=1)
 
+        # file = open('data.txt', encoding = 'utf-8')
+        # for f in file:
+        #     self.t1.insert('end', f)
+
 
 
     def parse_copy(self, file):
@@ -31,8 +35,27 @@ class Additem(Frame):
         goods = {}
 
 
+        for f in file.split('\n'):
+            # self.t2.insert('end', f)
+            rownum +=1
+            if '下单时间' in f:
+                b = f.split('/')
+                m = b[0][-2:].replace(':','')
+                d = b[1]
+                y = b[-1][:4]
 
 
+                time = date(year = int(y), month = int(m), day = int(d))
+                continue
+            if '包裹单数量'  in f:
+                b = f.split()
+                package_num = int(''.join([s for s in b[1]]))
+                money = b[-1].replace('支出金额','').replace('欧', '')[1:]
+                continue
+            if '物品' in f and '品牌' in f and '尺寸' in f:
+                start_goods = True
+                continue
+            if start_goods and f.split()[-1].isdigit():
 
                 k = ''.join(f.split()[:-2])
                 v = f.split()[-1]
