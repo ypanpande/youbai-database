@@ -9,19 +9,6 @@ from datetime import date
 
 class ProfitTable():
 
-
-    #get data from profit table
-    def get_all_data(self, start = '2021-08-01', end = date.today()):
-        df = self.create_profit_table( start =start, end = end)
-
-        tprice = np.sum([float(s) for s in df['price_average']])
-        tpackage_num = np.sum([float(s) for s in df['package_num_average']])
-        tb_price = np.sum([float(s) for s in df['tb_price']])
-        tc_price = np.sum([float(s) for s in df['tc_price']])
-        profit = np.sum([float(s) for s in df['profit']])-tprice
-
-        return {'df': df, 'tprice': tprice, 'tpackage_num': tpackage_num, 'tb_price':tb_price, 'tc_price':tc_price, 'profit':profit }
-
     # get profit table
     def create_profit_table(self, start = '2021-08-01', end = date.today()):
         price_df = pd.read_sql_query('SELECT * FROM product_price', sqlite3.connect('youbai.db'))
@@ -37,6 +24,19 @@ class ProfitTable():
                 messagebox.showerror(message = f'add information of "{name}" to "product_price" database')
                 print(name)
                 continue
+
+    #get data from profit table
+    def get_all_data(self, start = '2021-08-01', end = date.today()):
+        df = self.create_profit_table( start =start, end = end)
+
+        tprice = np.sum([float(s) for s in df['price_average']])
+        tpackage_num = np.sum([float(s) for s in df['package_num_average']])
+        tb_price = np.sum([float(s) for s in df['tb_price']])
+        tc_price = np.sum([float(s) for s in df['tc_price']])
+        profit = np.sum([float(s) for s in df['profit']])-tprice
+
+        return {'df': df, 'tprice': tprice, 'tpackage_num': tpackage_num, 'tb_price':tb_price, 'tc_price':tc_price, 'profit':profit }
+
 
 
 
