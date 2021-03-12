@@ -20,10 +20,7 @@ class ProfitTable():
             name = row['name']
             num = row['num']
             choose_item = price_df[price_df['name'] == name].to_numpy()
-            if len(choose_item) == 0:
-                messagebox.showerror(message = f'add information of "{name}" to "product_price" database')
-                print(name)
-                continue
+s
 
 
             buy_price = float(choose_item[0][1])
