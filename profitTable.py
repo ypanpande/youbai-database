@@ -12,24 +12,7 @@ class ProfitTable():
     # get profit table
 
 
-    # get grouped profit table
-    def create_profit_table_group(self, start = '2021-08-01', end = date.today() ):
-        price_df = pd.read_sql_query('SELECT * FROM product_price', sqlite3.connect('youbai.db'))
-        sql = f'SELECT * FROM goods WHERE day BETWEEN "{start}" AND "{end}"'
-        goods_df = self.create_goods_table_group(start, end)
 
-        tem = []
-        for index1, row in goods_df.iterrows():
-            name = row['name']
-            num = row['num']
-            choose_item = price_df[price_df['name'] == name].to_numpy()
-
-            buy_price = float(choose_item[0][1])
-            sell_price = float(choose_item[0][2])
-
-            tem.append({'name': name, 'num':num, 'price_average': row['price_average'], 'package_num_average':row['package_num_average'], 'tb_price': buy_price*float(num), 'tc_price' :sell_price*float(num), 'profit':  sell_price*float(num)-buy_price*float(num)})
-
-        return pd.DataFrame(tem)
 
     # get grouped goods table
     def create_goods_table_group(self, start = '2021-08-01', end = date.today()):
