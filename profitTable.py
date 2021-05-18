@@ -23,7 +23,7 @@ class ProfitTable():
         for index1, row in goods_df.iterrows():
             name = row['name']
             num = float(row['num'])
-            price_average = float(row['price_average'])
+            price_average = float(row['s'])
             package_num_average = float(row['package_num_average'])
             lname = [v['name'] for v in tem]
             if name in lname:
@@ -33,9 +33,7 @@ class ProfitTable():
                 tem[i]['package_num_average'] += package_num_average
             else:
                 ele = {'name':name,'num':num, 'price_average':price_average, 'package_num_average':package_num_average }
-                tem.append(ele)
 
-        return pd.DataFrame(tem)
 
         # get first 5 rows from grouped profit table
     def get_sorted_profit_group(self, start = '2021-08-01', end = date.today()):
