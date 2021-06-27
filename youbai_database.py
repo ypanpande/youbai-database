@@ -35,6 +35,14 @@ class Youbai_database(Frame):
 
 
 
+    def on_save_table(self):
+        df = self.tb.model.df
+        con = sqlite3.connect('youbai.db')
+
+        df.to_sql('product_price', con, if_exists = 'replace', index = False)
+
+
+
 
 
 
