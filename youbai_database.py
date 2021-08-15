@@ -56,13 +56,6 @@ class Youbai_database(Frame):
         df = self.youbai_search()
 
         ugoods = {}
-        for index, row in df.iterrows():
-            k = row[0]
-            v = int(row[1])
-            if k in ugoods:
-                ugoods[k] += v
-            else:
-                ugoods[k] = v
 
 
         tprice = np.sum([float(s) for s in df['price_average']])
