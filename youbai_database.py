@@ -71,16 +71,7 @@ class Youbai_database(Frame):
         con.commit()
         con.close()
 
-    def youbai_insert(self, entities):
-        try:
-            con = sqlite3.connect('youbai.db')
-            cursor = con.cursor()
-            cursor.execute('INSERT INTO goods VALUES (?, ?, ?, ?,?)', entities)
-        except:
-            messagebox.showerror(title = 'add fail', message = sqlite3.Error)
-        finally:
-            con.commit()
-            con.close()
+
 
     def youbai_search(self):
         con = sqlite3.connect('youbai.db')
