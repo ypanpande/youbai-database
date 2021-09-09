@@ -55,6 +55,11 @@ class Youbai_database(Frame):
     def get_all_data(self):
         df = self.youbai_search()
 
+        ugoods = {}
+
+
+        tprice = np.sum([float(s) for s in df['price_average']])
+        tpackage_num = np.sum([float(s) for s in df['package_num_average']])
 
         return {'ugoods': ugoods, 'tprice': tprice, 'tpackage_num': tpackage_num }
 
@@ -71,7 +76,16 @@ class Youbai_database(Frame):
         con.commit()
         con.close()
 
-
+    def youbai_insert(self, entities):
+        try:
+            con = sqlite3.connect('youbai.db')
+            cursor = con.cursor()
+            cursor.execute('INSERT INTO goods VALUES (?, ?, ?, ?,?)', entities)
+        except:
+            messagebox.showerror(title = 'add fail', message = sqlite3.Error)
+        finally:
+            con.commit()
+            con.close()
 
     def youbai_search(self):
         con = sqlite3.connect('youbai.db')
