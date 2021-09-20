@@ -35,7 +35,7 @@ class ProfitStatic(Frame):
 
 
 
-    def plot_bar(self, ax, df, colName):
+    def plot_bar(self, ax, df):
         x = df['name']
         y = np.round(df[colName[0]],1)
 
