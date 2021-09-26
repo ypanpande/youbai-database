@@ -49,7 +49,7 @@ class ProfitStatic(Frame):
 
     def plot_piechart(self, ax, df, colName, legend = False):
         name = df['name']
-        y = np.round(df[colName[0]],1)
+
 
         autopct='%1.1f%%'
         ax.pie(y,autopct=autopct)
