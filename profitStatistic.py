@@ -17,6 +17,14 @@ class ProfitStatic(Frame):
         plt.rcParams['axes.unicode_minus']=False #用来正常显示负号
 
 
+        fig = Figure(figsize=(10, 10))
+        fig.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.3)
+        self.canvas = FigureCanvasTkAgg(fig, master)  # A
+        self.ax = fig.subplots(1,5)
+
+        self.canvas.get_tk_widget().pack(expand=1, fill = 'both')
+
+
 
     def test(self):
         df6 = ProfitTable().get_sorted_profit_group()
@@ -35,7 +43,7 @@ class ProfitStatic(Frame):
 
 
 
-    def plot_bar(self, ax, df):
+    def plot_bar(self, ax, df, colName):
         x = df['name']
         y = np.round(df[colName[0]],1)
 
@@ -49,7 +57,7 @@ class ProfitStatic(Frame):
 
     def plot_piechart(self, ax, df, colName, legend = False):
         name = df['name']
-
+        y = np.round(df[colName[0]],1)
 
         autopct='%1.1f%%'
         ax.pie(y,autopct=autopct)
