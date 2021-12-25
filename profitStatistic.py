@@ -26,22 +26,6 @@ class ProfitStatic(Frame):
 
 
 
-    def test(self):
-        df6 = ProfitTable().get_sorted_profit_group()
-        legend = False
-        names =  {'num':'item numbers', 'price_average': 'delivery price per package', 'tb_price':'total buy price', 'tc_price': 'total sell price', 'profit':'total profit'}
-        for i, colName in enumerate(names.items()):
-            print(colName)
-
-            if i==0:
-                legend = True
-            else:
-                legend = False
-            self.plot_piechart(self.ax[i], df6,colName, legend)
-            # self.plot_bar(self.ax[i], df6,colName)
-
-
-
 
     def plot_bar(self, ax, df, colName):
         x = df['name']
