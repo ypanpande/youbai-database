@@ -18,4 +18,4 @@ Youbai Database Tool is a software for analysis the items sold by Chinese websit
 
 
 ## Python dependencies
-The list of required python packages is contained in the [requirements.txt](requirements.txt) file in this repository. After install the required dependencies, run `main_EDS_composition.py` to execute the program.
+The list of required python packages is contained in the [requirements.txt](requirements.txt) file in this repository. After install the required dependencies, run `main_Youbai_database_tool.py` to execute the program.
